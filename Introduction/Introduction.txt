@@ -1,0 +1,16 @@
+Why Java?
+
+In the 1980s and 1990s, C and C++ were the most popular programming languages. However, they had some major limitations:
+
+- Portability: Code written in C/C++ had to be compiled separately for different operating systems and machines.
+- Memory management: Developers had to manually manage memory, which increased the risk of errors like memory leaks and segmentation faults.
+- Complexity: Large programs were harder to maintain and scale.
+- Security: C/C++ were more prone to low-level security issues.
+
+Java was developed to overcome these problems. It provides:
+
+- Platform independence through the Java Virtual Machine (JVM)
+- Automatic memory management through garbage collection
+- Better security and reliability
+- Strong object-oriented programming support
+- High scalability for enterprise and large applications
