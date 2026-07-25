@@ -256,7 +256,114 @@ Important OOP concepts:
 - Polymorphism
 - Abstraction
 
-13. Exception Handling
+13. Object-Oriented Programming Concepts in Detail
+Java is built around OOP, which helps organize code into reusable and manageable parts.
+
+A. Class and Object
+- Class: blueprint or template
+- Object: real instance created from a class
+
+Example:
+class Student {
+    String name;
+
+    void study() {
+        System.out.println(name + " is studying");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.name = "Alice";
+        s1.study();
+    }
+}
+
+B. Encapsulation
+Encapsulation means wrapping data and methods inside a class and protecting them using access modifiers.
+
+Example:
+class Account {
+    private double balance;
+
+    public void deposit(double amount) {
+        if (amount > 0) {
+            balance += amount;
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+Why it is useful:
+- protects sensitive data
+- improves security
+- makes code easier to maintain
+
+C. Inheritance
+Inheritance allows one class to acquire properties and methods of another class.
+
+Example:
+class Animal {
+    void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Dog barks");
+    }
+}
+
+D. Polymorphism
+Polymorphism means one interface can have many forms.
+
+Example:
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+E. Abstraction
+Abstraction hides implementation details and shows only essential features.
+
+Example:
+abstract class Shape {
+    abstract void draw();
+}
+
+class Circle extends Shape {
+    void draw() {
+        System.out.println("Drawing a circle");
+    }
+}
+
+F. Interface
+An interface defines a contract that a class must follow.
+
+Example:
+interface Printable {
+    void print();
+}
+
+class Document implements Printable {
+    public void print() {
+        System.out.println("Printing document");
+    }
+}
+
+14. Exception Handling
 Exceptions are errors that happen during program execution.
 
 Example:
