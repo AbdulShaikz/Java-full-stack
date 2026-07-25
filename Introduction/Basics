@@ -45,3 +45,223 @@ It is not machine-specific, so it can run on any platform with JVM support.
 
 Java Program Execution Flow
 Source code (.java) → compiled by javac → bytecode (.class) → executed by JVM
+
+Java Fundamentals
+
+1. Basic Structure of a Java Program
+A simple Java program looks like this:
+
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+
+Important parts:
+- public class HelloWorld: every Java program starts with a class
+- public static void main(String[] args): entry point of the program
+- System.out.println(): prints output to the console
+
+2. Comments in Java
+Comments are used to explain code.
+
+// Single-line comment
+/* Multi-line comment */
+/** Documentation comment */
+
+3. Variables and Data Types
+Variables are used to store data.
+
+Syntax:
+dataType variableName = value;
+
+Primitive data types:
+- byte: small integer
+- short: integer
+- int: integer (most commonly used)
+- long: large integer
+- float: decimal numbers
+- double: decimal numbers (more precise)
+- char: single character
+- boolean: true or false
+
+Example:
+int age = 25;
+double price = 99.99;
+char grade = 'A';
+boolean isJavaFun = true;
+
+Non-primitive types:
+- String
+- arrays
+- classes
+- objects
+
+4. Naming Variables
+Rules:
+- Must start with a letter, underscore, or dollar sign
+- Cannot start with a number
+- Cannot use reserved keywords
+- Should be meaningful
+
+Example:
+int studentAge = 20;
+String studentName = "Alice";
+
+5. Operators in Java
+Arithmetic operators:
+- + addition
+- - subtraction
+- * multiplication
+- / division
+- % modulus
+
+Example:
+int a = 10;
+int b = 3;
+System.out.println(a + b);
+System.out.println(a % b);
+
+Assignment operators:
+- =
+- +=
+- -=
+- *=
+- /=
+
+Comparison operators:
+- == equal to
+- != not equal to
+- > greater than
+- < less than
+- >= greater than or equal to
+- <= less than or equal to
+
+Logical operators:
+- && AND
+- || OR
+- ! NOT
+
+6. Taking Input and Printing Output
+To read input, Java uses the Scanner class.
+
+Example:
+import java.util.Scanner;
+
+public class InputExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String name = sc.nextLine();
+        System.out.println("Hello " + name);
+    }
+}
+
+7. Conditional Statements
+If-else statement:
+
+int age = 18;
+if (age >= 18) {
+    System.out.println("Adult");
+} else {
+    System.out.println("Minor");
+}
+
+Switch statement:
+
+int day = 2;
+switch (day) {
+    case 1 -> System.out.println("Monday");
+    case 2 -> System.out.println("Tuesday");
+    default -> System.out.println("Other day");
+}
+
+8. Loops in Java
+For loop:
+for (int i = 0; i < 5; i++) {
+    System.out.println(i);
+}
+
+While loop:
+int i = 0;
+while (i < 5) {
+    System.out.println(i);
+    i++;
+}
+
+Do-while loop:
+int i = 0;
+do {
+    System.out.println(i);
+    i++;
+} while (i < 5);
+
+9. Methods in Java
+Methods are reusable blocks of code.
+
+Syntax:
+returnType methodName(parameters) {
+    // code
+}
+
+Example:
+public static int add(int a, int b) {
+    return a + b;
+}
+
+10. Arrays
+Arrays store multiple values of the same type.
+
+Example:
+int[] numbers = {1, 2, 3, 4};
+System.out.println(numbers[0]);
+
+11. Strings
+Strings are used to store text.
+
+Example:
+String name = "Java";
+System.out.println(name.length());
+System.out.println(name.toUpperCase());
+
+Strings are immutable, which means they cannot be changed once created.
+
+12. Object-Oriented Programming Basics
+Java is an object-oriented language.
+
+Class and Object:
+A class is a blueprint, and an object is an instance of a class.
+
+Example:
+class Car {
+    String color;
+
+    void drive() {
+        System.out.println("Car is driving");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Car c1 = new Car();
+        c1.color = "Red";
+        c1.drive();
+    }
+}
+
+Important OOP concepts:
+- Class and object
+- Encapsulation
+- Inheritance
+- Polymorphism
+- Abstraction
+
+13. Exception Handling
+Exceptions are errors that happen during program execution.
+
+Example:
+try {
+    int result = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+}
