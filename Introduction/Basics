@@ -372,3 +372,16 @@ try {
 } catch (ArithmeticException e) {
     System.out.println("Cannot divide by zero");
 }
+
+XoR:
+- returns 1 only when two bits are different
+- returns 0 when the two bits are the same
+a ⊕ b ⊕ b = a
+a ⊕ b ⊕ a = b 
+Truth table:
+
+A	B	 A XOR B
+0	0	    0
+0	1	    1
+1	0	    1
+1	1	    0
