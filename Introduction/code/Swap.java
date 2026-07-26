@@ -4,10 +4,16 @@ public class Swap{
         int a = 10;
         int b = 20;
 
-        a = a + b;
+        //Using Arithemetic
+        /*a = a + b;
         b = a - b;
-        a = a - b;
+        a = a - b;*/
 
+        //Using XoR
+        a = a^b;
+        b = a^b;
+        a = a^b;
+        
         System.out.println("a: "+ a + " b: "+ b);
     }
 }
