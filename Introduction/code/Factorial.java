@@ -17,5 +17,13 @@ public class Factorial{
         }
         
         System.out.println("Factorial of " + value + " is : " + factorial);
+        System.out.println("Factorial using recursion: "+ factorial(value));
+    }
+
+    public static int factorial(int num){
+        if(num==0 || num==1){
+            return 1;
+        }
+        return num * factorial(num-1);
     }
 }
