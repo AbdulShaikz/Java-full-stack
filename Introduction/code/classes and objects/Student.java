@@ -5,6 +5,22 @@ public class Student {
     int age;
     int rollNo;
 
+    public Student(String name, int age, int rollNo) {
+        this.name = name;
+        this.age = age;
+        this.rollNo = rollNo;
+    }
+
+    public Student(String name, int rollNo) {
+        this(name, 18, rollNo);
+    }
+
+    public Student() {
+        this.name = "";
+        this.age = 18;
+        this.rollNo = 0;
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
