@@ -1,14 +1,14 @@
 import java.util.Scanner;
 
 public class Student {
-    String name;
-    int age;
-    int rollNo;
+    private String name;
+    private int age;
+    private int rollNo;
 
     public Student(String name, int age, int rollNo) {
-        this.name = name;
-        this.age = age;
-        this.rollNo = rollNo;
+        setName(name);
+        setAge(age);
+        setRollNo(rollNo);
     }
 
     public Student(String name, int rollNo) {
@@ -16,42 +16,68 @@ public class Student {
     }
 
     public Student() {
-        this.name = "";
-        this.age = 18;
-        this.rollNo = 0;
+        this("", 18, 0);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age < 0) {
+            throw new IllegalArgumentException("Age cannot be negative");
+        }
+        this.age = age;
+    }
+
+    public int getRollNo() {
+        return rollNo;
+    }
+
+    public void setRollNo(int rollNo) {
+        this.rollNo = rollNo;
     }
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Student[] students = new Student[5];
 
-        Student s1 = new Student();
-        System.out.print("Enter name for student 1: ");
-        s1.name = scanner.nextLine();
-        System.out.print("Enter age for student 1: ");
-        s1.age = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter roll number for student 1: ");
-        s1.rollNo = Integer.parseInt(scanner.nextLine());
+        for (int i = 0; i < students.length; i++) {
+            students[i] = new Student();
+            System.out.print("Enter name for student " + (i + 1) + ": ");
+            students[i].setName(scanner.nextLine());
 
-        Student s2 = new Student();
-        System.out.print("Enter name for student 2: ");
-        s2.name = scanner.nextLine();
-        System.out.print("Enter age for student 2: ");
-        s2.age = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter roll number for student 2: ");
-        s2.rollNo = Integer.parseInt(scanner.nextLine());
+            int age = -1;
+            while (age < 0) {
+                System.out.print("Enter age for student " + (i + 1) + ": ");
+                age = Integer.parseInt(scanner.nextLine());
+                if (age < 0) {
+                    System.out.println("Age cannot be negative. Please enter a valid age.");
+                }
+            }
+            students[i].setAge(age);
 
-        Student s3 = new Student();
-        System.out.print("Enter name for student 3: ");
-        s3.name = scanner.nextLine();
-        System.out.print("Enter age for student 3: ");
-        s3.age = Integer.parseInt(scanner.nextLine());
-        System.out.print("Enter roll number for student 3: ");
-        s3.rollNo = Integer.parseInt(scanner.nextLine());
+            System.out.print("Enter roll number for student " + (i + 1) + ": ");
+            students[i].setRollNo(Integer.parseInt(scanner.nextLine()));
+        }
 
         scanner.close();
 
-        System.out.println("Student 1: " + s1.name + ", Age: " + s1.age + ", Roll No: " + s1.rollNo);
-        System.out.println("Student 2: " + s2.name + ", Age: " + s2.age + ", Roll No: " + s2.rollNo);
-        System.out.println("Student 3: " + s3.name + ", Age: " + s3.age + ", Roll No: " + s3.rollNo);
+        Student oldest = students[0];
+        for (int i = 1; i < students.length; i++) {
+            if (students[i].getAge() > oldest.getAge()) {
+                oldest = students[i];
+            }
+        }
+
+        System.out.println("Oldest student: " + oldest.getName() + ", Age: " + oldest.getAge() + ", Roll No: " + oldest.getRollNo());
     }
 }
