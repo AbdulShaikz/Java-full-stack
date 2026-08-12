@@ -46,6 +46,15 @@ public class Student {
         this.rollNo = rollNo;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", rollNo=" + rollNo +
+                '}';
+    }
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Student[] students = new Student[5];
@@ -77,7 +86,6 @@ public class Student {
                 oldest = students[i];
             }
         }
-
-        System.out.println("Oldest student: " + oldest.getName() + ", Age: " + oldest.getAge() + ", Roll No: " + oldest.getRollNo());
+        System.out.println("Oldest student: " + oldest);
     }
 }
