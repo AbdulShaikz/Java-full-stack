@@ -47,6 +47,24 @@ public class Student {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || getClass() != obj.getClass()) {
+            return false;
+        }
+
+        Student student = (Student) obj;
+        return rollNo == student.rollNo;
+    }
+
+    @Override
+    public int hashCode() {
+        return Integer.hashCode(rollNo);
+    }
+
+    @Override
     public String toString() {
         return "Student{" +
                 "name='" + name + '\'' +
@@ -79,6 +97,10 @@ public class Student {
         }
 
         scanner.close();
+
+        Student s1 = new Student("Alice", 20, 101);
+        Student s2 = new Student("Bob", 22, 101);
+        System.out.println("s1 equals s2? " + s1.equals(s2));
 
         Student oldest = students[0];
         for (int i = 1; i < students.length; i++) {
