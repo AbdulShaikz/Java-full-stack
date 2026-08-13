@@ -1,22 +1,66 @@
 import java.util.Scanner;
 
+class Address {
+    private String city;
+    private int pincode;
+
+    public Address() {
+        this("", 0);
+    }
+
+    public Address(String city, int pincode) {
+        setCity(city);
+        setPincode(pincode);
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public int getPincode() {
+        return pincode;
+    }
+
+    public void setPincode(int pincode) {
+        this.pincode = pincode;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" +
+                "city='" + city + '\'' +
+                ", pincode=" + pincode +
+                '}';
+    }
+}
+
 public class Student {
     private String name;
     private int age;
     private int rollNo;
+    private Address address;
 
     public Student(String name, int age, int rollNo) {
+        this(name, age, rollNo, new Address());
+    }
+
+    public Student(String name, int age, int rollNo, Address address) {
         setName(name);
         setAge(age);
         setRollNo(rollNo);
+        setAddress(address);
     }
 
     public Student(String name, int rollNo) {
-        this(name, 18, rollNo);
+        this(name, 18, rollNo, new Address());
     }
 
     public Student() {
-        this("", 18, 0);
+        this("", 18, 0, new Address());
     }
 
     public String getName() {
@@ -46,6 +90,17 @@ public class Student {
         this.rollNo = rollNo;
     }
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        if (address == null) {
+            throw new IllegalArgumentException("Address cannot be null");
+        }
+        this.address = address;
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -70,6 +125,7 @@ public class Student {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", rollNo=" + rollNo +
+                ", address=" + address +
                 '}';
     }
 
@@ -94,12 +150,18 @@ public class Student {
 
             System.out.print("Enter roll number for student " + (i + 1) + ": ");
             students[i].setRollNo(Integer.parseInt(scanner.nextLine()));
+
+            System.out.print("Enter city for student " + (i + 1) + ": ");
+            String city = scanner.nextLine();
+            System.out.print("Enter pincode for student " + (i + 1) + ": ");
+            int pincode = Integer.parseInt(scanner.nextLine());
+            students[i].setAddress(new Address(city, pincode));
         }
 
         scanner.close();
 
-        Student s1 = new Student("Alice", 20, 101);
-        Student s2 = new Student("Bob", 22, 101);
+        Student s1 = new Student("Alice", 20, 101, new Address("Delhi", 110001));
+        Student s2 = new Student("Bob", 22, 101, new Address("Mumbai", 400001));
         System.out.println("s1 equals s2? " + s1.equals(s2));
 
         Student oldest = students[0];
@@ -109,5 +171,10 @@ public class Student {
             }
         }
         System.out.println("Oldest student: " + oldest);
+
+        System.out.println("All student details:");
+        for (Student student : students) {
+            System.out.println(student);
+        }
     }
 }
