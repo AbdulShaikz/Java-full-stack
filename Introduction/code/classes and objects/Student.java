@@ -18,6 +18,9 @@ class Address {
     }
 
     public void setCity(String city) {
+        if (city == null) {
+            throw new IllegalArgumentException("City cannot be null");
+        }
         this.city = city;
     }
 
@@ -26,6 +29,9 @@ class Address {
     }
 
     public void setPincode(int pincode) {
+        if (pincode < 0) {
+            throw new IllegalArgumentException("Pincode cannot be negative");
+        }
         this.pincode = pincode;
     }
 
