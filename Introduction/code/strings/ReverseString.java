@@ -12,5 +12,11 @@ public class ReverseString{
             reverseStr[reverseStr.length-1-i] = temp;
         }
         System.out.println("Reverse String is: " + new String(reverseStr));
+        System.out.println("Optimized Reverse String is: " + reverseStringOptimized(str));
+    }
+
+    // Alternative implementation: concise and optimized for readability.
+    private static String reverseStringOptimized(String str) {
+        return new StringBuilder(str).reverse().toString();
     }
 }
