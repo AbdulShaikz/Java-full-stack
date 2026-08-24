@@ -39,12 +39,14 @@ class Bike extends Vehicle {
 
 class VehicleTest {
     public static void main(String[] args) {
-        Vehicle car = new Car("Toyota", 120, 4);
-        Vehicle bike = new Bike("Trek", 30);
-        Car car2 = new Car("Hyundai",150,4);
+        Vehicle[] vehicles = {
+            new Car("Toyota", 120, 4),
+            new Bike("Trek", 30),
+            new Car("Hyundai", 150, 4)
+        };
 
-        car.move();
-        bike.move();
-        car2.move();
+        for (Vehicle vehicle : vehicles) {
+            vehicle.move();
+        }
     }
 }
