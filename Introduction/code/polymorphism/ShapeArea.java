@@ -1,5 +1,9 @@
 abstract class Shape{
 	abstract double calculateArea();
+
+	void displayInfo() {
+		System.out.println("This is a shape.");
+	}
 }
 
 // Shape shape = new Shape(); // Compile-time error: abstract classes cannot be instantiated.
@@ -56,6 +60,7 @@ public class ShapeArea {
 		};
 
 		for (Shape shape : shapes) {
+			shape.displayInfo();
 			System.out.println("Area: " + shape.calculateArea());
 		}
 	}
