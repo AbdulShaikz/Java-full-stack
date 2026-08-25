@@ -2,6 +2,8 @@ abstract class Shape{
 	abstract double calculateArea();
 }
 
+// Shape shape = new Shape(); // Compile-time error: abstract classes cannot be instantiated.
+
 class Circle extends Shape {
 	private final double radius;
 
