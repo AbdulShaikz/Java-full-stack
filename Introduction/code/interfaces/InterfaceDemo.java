@@ -1,6 +1,11 @@
 interface Payable {
+    // Use an interface for a "can-do" capability or contract. It is ideal when
+    // unrelated classes share behavior requirements, without shared instance state.
     void calculatePayment();
 }
+
+// Use an abstract class for an "is-a" relationship when related classes should
+// inherit shared code or state, while leaving some behavior for subclasses.
 
 class Employee implements Payable {
     @Override
