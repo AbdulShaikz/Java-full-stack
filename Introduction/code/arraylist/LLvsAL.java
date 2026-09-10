@@ -25,3 +25,7 @@ public class LLvsAL {
 		System.out.println("LinkedList links a new node at the beginning.");
 	}
 }
+
+// Learning:
+// ArrayList insertion at index 0 is O(n) because existing elements shift.
+// LinkedList insertion at the beginning is O(1), but its nodes use more memory.
