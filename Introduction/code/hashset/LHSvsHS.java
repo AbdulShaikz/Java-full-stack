@@ -18,3 +18,8 @@ public class LHSvsHS {
 		System.out.println("HashSet (order not guaranteed): " + hashSet);
 	}
 }
+
+// Learning points:
+// 1. HashSet stores unique elements and does not guarantee iteration order.
+// 2. LinkedHashSet stores unique elements while preserving insertion order.
+// 3. Both sets reject duplicate values.
