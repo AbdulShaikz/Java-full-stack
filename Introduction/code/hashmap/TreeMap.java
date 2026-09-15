@@ -13,3 +13,9 @@ public class TreeMap {
 		}
 	}
 }
+
+// Learning points:
+// 1. TreeMap stores key-value pairs in ascending order of keys by default.
+// 2. Duplicate keys replace their existing values.
+// 3. entrySet() returns all key-value pairs for iteration.
+// 4. TreeMap provides sorted map operations, such as firstKey() and lastKey().
