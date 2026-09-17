@@ -69,3 +69,12 @@ public class ContactBook {
         }
     }
 }
+
+/*
+ * Learning points:
+ * 1. HashMap stores contacts as key-value pairs for fast lookup.
+ * 2. TreeMap sorts contacts alphabetically when displaying them.
+ * 3. Scanner reads user input from the console.
+ * 4. A switch statement handles the menu choices.
+ * 5. Try-with-resources automatically closes the Scanner.
+ */
