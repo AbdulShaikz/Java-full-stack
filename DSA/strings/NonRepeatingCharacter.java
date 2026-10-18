@@ -35,3 +35,10 @@ public class NonRepeatingCharacter {
 		}
 	}
 }
+
+/*
+ * Logic: Count each character's occurrences in a LinkedHashMap, which preserves
+ * the order in which characters first appear. Then scan that order and return
+ * the first character with a count of one. If the input is null, empty, or
+ * contains no unique character, return null.
+ */
