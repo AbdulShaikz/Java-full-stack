@@ -30,3 +30,18 @@ public class LongestCommonPrefix {
 		scanner.close();
 	}
 }
+
+/*
+ * Logic:
+ * 1. If the array is null or has no strings, there is no common prefix, so
+ *    return an empty string.
+ * 2. Start with the first string as the candidate prefix.
+ * 3. Check each remaining string. If it does not start with the candidate,
+ *    remove the candidate's last character and check again. Repeating this
+ *    keeps shortening the candidate until it matches the start of that string.
+ * 4. If the candidate becomes empty, the strings have no non-empty common
+ *    prefix, so return an empty string. Otherwise, after all strings are
+ *    checked, the candidate is the longest prefix shared by every string.
+ * 5. In main, read the number of strings and the strings themselves, call the
+ *    method, and print its result.
+ */
