@@ -33,9 +33,12 @@ public class Cipher {
 		System.out.print("Enter shift key: ");
 		int key = scanner.nextInt();
 
+		// Encrypt the input, display the result, then decrypt it with the same key
+		// to verify that the original text can be recovered.
 		String encrypted = encrypt(text, key);
 		System.out.println("Encrypted: " + encrypted);
 		System.out.println("Decrypted: " + decrypt(encrypted, key));
 		scanner.close();
 	}
 }
+
